@@ -7,6 +7,12 @@ const key = {
 	},
 };
 
+const gameProp = {
+	// 공통으로 관리하면 화면 사이즈가 변할 때 쉽게 대응 가능함
+	screenWidth: window.innerWidth,
+	screenHeight: window.innerHeight,
+};
+
 const renderGame = () => {
 	hero.keyMotion(); // 초당 약 60 FPS로 호출하며 키모션 메소드를 계속 호출하며 키값의 상태를 계속 체크하고 히어로의 움직임에 필요한 값을 변경해주기 떄문에 키눌림의 딜레이 없이 부드럽게 움직인다.
 	window.requestAnimationFrame(renderGame); // 재귀호출 : 초당 60프레임으로 무한반복!
